@@ -76,16 +76,16 @@ N[, 1] <- N1_stable
 
 for (t in 2:Tmax) N[, t] <- N[, t - 1] %*% trans
 
-df <- data.frame(
+df2 <- data.frame(
     t = 0:(Tmax - 1),
     N = colSums(N)
 )
 
-lm1 <- lm(log(N) ~ t, data = df)
+lm2 <- lm(log(N) ~ t, data = df2)
 
-coef(lm1)
+coef(lm2)
 
-exp(coef(lm1)[1])
+exp(coef(lm2)[1])
 
 mite <- read_csv("./data/AtlanticSpiderMite_CareyBradley1982.csv")
 
